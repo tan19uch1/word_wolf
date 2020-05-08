@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>WORD WOLF</title>
+  </head>
+  <body>
+	<h1>WORD WOLF</h1>
+	  <form method="get" action="">
+	        {% csrf_token %}
+		<table>{{form.as_table}}</table>
+		<input type="submit" value="送信">
+	  </form>
+	  SEED NUMBER : {{seed}} 	<br>
+	  MEMBER Num  : {{member}} 	<br>
+	  PLAYER ID   : {{player_id}}	<br>
+	  Mode        : {{mode}}	<br>
+	  YourTheme   : {{theme}}	<br>
+	  HumanTheme  : {{humantheme}} <br>
+  	  WolfTheme   : {{wolftheme}}	<br>
+
+
+
+  </body>
+</html>
