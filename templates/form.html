@@ -11,21 +11,57 @@
     <title>WORD WOLF</title>
   </head>
   <body>
-	<h1>WORD WOLF</h1>
+	<h1>リモート飲み会でWORD WOLFやる装置</h1>
+	
 	  <form method="get" action="">
 	        {% csrf_token %}
 		<table>{{form.as_table}}</table>
-		<input type="submit" value="送信">
+		<input type="submit" value="GO!!">
 	  </form>
-	  SEED NUMBER : {{seed}} 	<br>
-	  MEMBER Num  : {{member}} 	<br>
-	  PLAYER ID   : {{player_id}}	<br>
-	  Mode        : {{mode}}	<br>
-	  YourTheme   : {{theme}}	<br>
-	  HumanTheme  : {{humantheme}} <br>
-  	  WolfTheme   : {{wolftheme}}	<br>
+	 ------------------------------------------------------------------------------------------------------- <br>
 
+	{% if mode %}
+	  正解発表!!<br>
+	{% endif %}
 
+	{% if humantheme %}
+	  人間側のお題  : {{humantheme}} <br>
+	{% endif %}
+
+	{% if wolftheme %}
+  	  狼側のお題   : {{wolftheme}}	<br>
+	{% endif %}
+
+	{% if theme %}
+	  あなたのお題   : {{theme}}	<br>
+	{% endif %}
+
+	 ------------------------------------------------------------------------------------------------------- <br>
+	【入力値】<br>
+	{% if seed %}
+	  シード値 : {{seed}} 	<br>
+	{% endif %}
+
+	{% if member %}
+	  参加メンバー人数  : {{member}} 	<br>
+	{% endif %}
+
+	{% if player_id %}
+	  プレイヤーID   : {{player_id}}	<br>
+	{% endif %}
+
+	{% if wolfs %}
+	  狼の数       : {{wolfs}}	<br>
+	{% endif %}
+
+	 ------------------------------------------------------------------------------------------------------- <br>
+	【説明】 <br>
+	シード値：お題を決定します。1〜9999の数字を１つ決め、参加者は同じ数字を入力してください。 <br>
+	参加メンバー人数：参加者の数を入れてください。<br>
+	プレイヤーID：参加者でかぶらないように番号を決め、入力してください。お題を割り振るのに使います。 <br>
+	狼の数：狼役の数を入れてください。参加メンバー人数の過半数より小さい値にしてください。 <br>
+	正解発表のときはチェック： チェックボックスをONにすると正解が発表されます。<br>
+	 ------------------------------------------------------------------------------------------------------- <br>
 
   </body>
 </html>
