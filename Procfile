@@ -1,1 +1,1 @@
-web: gunicorn Tap.wsgi --log-file -
+web: gunicorn wordwolf.wsgi --log-file -
