@@ -5,7 +5,7 @@ from web.form import InputForm
 import numpy as np
 
 def setting(request):
-	f = InputForm(request.GET)
+	f = InputForm(request.GET or None)
 	# フォームに値が入力されてたら真
 	if f.is_valid():
 		seed 		= f.cleaned_data['seed']
